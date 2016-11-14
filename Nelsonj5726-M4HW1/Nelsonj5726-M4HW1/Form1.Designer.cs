@@ -28,48 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.displayTextbox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // displayLabel
+            // nextButton
             // 
-            this.displayLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.displayLabel.Location = new System.Drawing.Point(12, 9);
-            this.displayLabel.Name = "displayLabel";
-            this.displayLabel.Size = new System.Drawing.Size(260, 191);
-            this.displayLabel.TabIndex = 0;
-            this.displayLabel.Text = "Click \'Next\' to see the next mob. The list will automatically return to the start" +
-    " when you hit the end.";
-            this.displayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nextButton.Location = new System.Drawing.Point(62, 203);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 1;
+            this.nextButton.Text = "&Next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
-            // button1
+            // exitButton
             // 
-            this.button1.Location = new System.Drawing.Point(62, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Next";
-            this.button1.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(143, 203);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "E&xit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // button2
+            // displayTextbox
             // 
-            this.button2.Location = new System.Drawing.Point(143, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "E&xit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.displayTextbox.Location = new System.Drawing.Point(12, 12);
+            this.displayTextbox.Name = "displayTextbox";
+            this.displayTextbox.ReadOnly = true;
+            this.displayTextbox.Size = new System.Drawing.Size(260, 185);
+            this.displayTextbox.TabIndex = 3;
+            this.displayTextbox.Text = "Click \"Next\" to see the bestiary. The bestiary will simply wrap around when you h" +
+    "it the end.";
             // 
             // bestiaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 239);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.displayLabel);
+            this.Controls.Add(this.displayTextbox);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.nextButton);
             this.Name = "bestiaryForm";
             this.Text = "Bestiary";
             this.ResumeLayout(false);
@@ -77,10 +78,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label displayLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.RichTextBox displayTextbox;
     }
 }
 

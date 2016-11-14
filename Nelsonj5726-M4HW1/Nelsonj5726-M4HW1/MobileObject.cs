@@ -8,7 +8,7 @@ namespace Nelsonj5726_M4HW1
 {
     class MobileObject
     {
-
+        private string _Name;
         private int _HP;
         private int _maxHP;
         private int _armor;
@@ -16,9 +16,11 @@ namespace Nelsonj5726_M4HW1
         private int _damage;
         private bool _canAttack;
         private bool _isDead;
+        private int _factionValue;
 
         public MobileObject()
         {
+            _Name = "Error";
             _HP = 0;
             _maxHP = 0;
             _armor = 0;
@@ -29,6 +31,7 @@ namespace Nelsonj5726_M4HW1
         }
         public MobileObject(bool canAttack, bool isDead)
         {
+            _Name = "Error";
             _HP = 0;
             _maxHP = 0;
             _armor = 0;
@@ -37,8 +40,9 @@ namespace Nelsonj5726_M4HW1
             _canAttack = canAttack;
             _isDead = isDead;
         }
-        public MobileObject(int hp, int maxhp, int armor, int attack, int damage, int factionValue, bool canAttack, bool isDead)
+        public MobileObject(string name, int hp, int maxhp, int armor, int attack, int damage, int factionValue, bool canAttack, bool isDead)
         {
+            _Name = name;
             _HP = hp;
             _maxHP = maxhp;
             _armor = armor;
@@ -59,6 +63,12 @@ namespace Nelsonj5726_M4HW1
         public void OnDeath()
         {
 
+        }
+
+        public virtual string Name
+        {
+            get { return _Name; }
+            set { _Name = value; }
         }
 
         public virtual int HP
@@ -85,6 +95,11 @@ namespace Nelsonj5726_M4HW1
         {
             get { return _damage; }
             set { _damage = value; }
+        }
+        public virtual int FactionValue
+        {
+            get { return _factionValue; }
+            set { _factionValue = value; }
         }
         public virtual bool canAttack
         {
